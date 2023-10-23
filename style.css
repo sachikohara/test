@@ -5,28 +5,18 @@ body {
     font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
     font-size: 14px;
     font-weight: 500;
+    -webkit-font-smoothing: antialiase
 }
-
-body { margin: 0;
-      padding: 0;}
-p { margin: 0;
-    padding: 0;}
-ul { margin: 0;
-    padding: 0;}
-li {
-    padding: 0;}
-dl { margin: 0;
-    padding: 0;}
-img { margin: 0;
-    padding: 0;}
-h2 { margin: 0;
-    padding: 0;}
-
 .Header {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
     position: absolute;
+}
+header {
+    display: block;
+}
+div{padding: 0;
 }
 
 .HeaderContainer {
@@ -37,7 +27,7 @@ h2 { margin: 0;
     position: relative;
 }
 
-.logo{
+.HeaderLogo{
     align-self: center;
 }
 
@@ -46,10 +36,20 @@ a {
     text-decoration: none;
 }
 
-.logo {
+.HeaderLogo__image--pc {
     display: block;
     height: 20px;
-    width: auto;}
+    width: auto;
+}
+.HeaderLogo__image--sp {
+    display: none;
+    height: 16px;
+    width: auto;
+}
+
+image {margin: 0;
+    padding: 0;
+}
     
 .HeaderNavList {
     align-items: center;
@@ -59,6 +59,9 @@ a {
 }
 .HeaderNavListItem__link {
     display: block;
+}
+.HeaderNavListItem:last-of-type {
+    margin-right: 0;
 }
 .HeaderNavListItem {
     margin-right: 45px;
@@ -70,11 +73,13 @@ a {
     text-align: center;
     list-style: none;
 }
+li{margin: 0;
+    padding: 0;
+}
 
 .HeaderNavListItem__button{
     color: #fff;
     transition: opacity .2s;
-
     align-items: center;
     background-color: #f79214;
     border: none;
@@ -86,13 +91,12 @@ a {
     justify-content: center;
     text-decoration: none;
     text-align: center;
-    width: 100%;
     font-size: 12px;
     height: 40px;
     padding: 0 20px;
 }
  .FirstView {
-    background-image: url(//camp.potepan.com/wp-content/themes/potepancamp/assets/styles/../images/home/first-view/top-hero.jpg);
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
     background-size: cover;
     background-position: center;
     padding-top: 100px;
@@ -126,6 +130,16 @@ img {
     margin-bottom: 70px;
     width: fit-content;
 }
+
+.FirstViewContent__title {
+    color: #333;
+    font-family: "Lato",sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    margin-bottom: 15px;
+    text-align: center;
+}
 .FirstViewContent__images {
     display: flex;
     margin-bottom: 25px;
@@ -138,9 +152,7 @@ img {
     width: 40%;
 }
 
-.FirstViewContent__images img {
-    margin-right: 8px;
-}
+
 .FirstViewContent__images img{
     margin-right: 0;
 }
@@ -175,6 +187,7 @@ img {
 .About__video {
     width: 50%;
 }
+
 .About__title {
     align-items: center;
     display: flex;
@@ -243,33 +256,21 @@ img {
     text-align: center;
     width: 100%;
 }
-
-    
-
-
-   li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-       
-   }
-   div {
+div {
     display: block;
 }
 ul{
     list-style: none;
 }
 
-
-
-
-
-
 @media screen and (max-width: 1080px)
 {
   
  .Header {
     background-color: #fff;
-    z-index: 10;}
+    z-index: 10;
+}
+    
 .Header--common {
     position: fixed !important;
 }
@@ -296,30 +297,8 @@ ul{
     border-radius: 10px;
     transition: top .2s,transform .2s,opacity .3s;
 }
-.HeaderNavHamburger__line {
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    transform: translate(0,-50%);
-    border-radius: 10px;
-    transition: top .2s,transform .2s,opacity .3s;
-}
 .HeaderNavHamburger__line:last-child {
     top: 100%;
-}
-.HeaderNavHamburger__line {
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    transform: translate(0,-50%);
-    border-radius: 10px;
-    transition: top .2s,transform .2s,opacity .3s;
 }
 .HeaderNavList {
     overflow-y: scroll;
@@ -350,6 +329,9 @@ ul{
     color: #f79214;
     letter-spacing: 2px;
 }
+.HeaderNavListItem:last-of-type {
+    margin-top: 20px;
+}
 .About {
     flex-direction: column;
 }
@@ -359,7 +341,6 @@ ul{
     
 .About__title {
     margin-left: 0;
-    width: 75%;
 }
 .About__title p {
     margin-bottom: 32px;
@@ -367,20 +348,6 @@ ul{
 .About__reskilling-logo {
     margin: auto;
 }
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    
 }
 
 @media screen and (max-width: 768px)
@@ -401,8 +368,10 @@ ul{
     max-width: 100%;
     margin: 0 20px;
 }
-
-.logo{
+.HeaderLogo__image--pc {
+    display: none;
+}
+.HeaderLogo__image--sp {
     display: block;
 }
 .HeaderNavList {
@@ -446,11 +415,8 @@ main {
 .FirstViewContent__images img {
     width: 27.5%;
 }
-.FirstViewContent__images img {
-    width: 27.5%;
-}
 .FirstViewContent__button {
-    width:cd 100% !important;
+    width: 100% !important;
 }
 .AboutWrapper {
     padding: 30px 0;
@@ -470,10 +436,6 @@ main {
 .About__title h2 span {
     letter-spacing: 1px;
 }
-.About__title h2 span {
-    letter-spacing: 1px;
-    text-align: left
-}
 
 
 
@@ -486,5 +448,11 @@ main {
     line-height: 1.4;
     white-space: pre;
     word-break: keep-all;
+}
+}
+@media screen and (min-width: 768px)
+{
+.HeaderLogo {
+    transition: opacity .2s;
 }
 }
